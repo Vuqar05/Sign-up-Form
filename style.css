@@ -181,10 +181,16 @@ div.input-item > input {
 }
 
 
+div.input-item > input:hover {
+    box-shadow: .15rem .15rem 3px rgba(0, 0, 0, 0.2);
+
+}
+
+
 div.input-item > input:focus {
     appearance: none;
     outline: 1px solid dodgerblue;
-    box-shadow: .1rem .1rem 3px rgba(0, 0, 0, 0.37);
+    box-shadow: .2rem .2rem 3px rgba(0, 0, 0, 0.4);
 }
 
 
