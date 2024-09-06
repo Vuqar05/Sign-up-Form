@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'norsebold';
+    src: url('fonts/norse-bold-webfont.woff2') format('woff2'),
+    url('fonts/norse-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --error-font-size: .7rem;
+    --button-font-size: 1rem;
+}
+
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+#root, #__next {
+    isolation: isolate;
+}
+
+.image-block {
+    position: relative;
+    flex-basis: calc(100vh * 2 / 3);
+    height: 100%;
+    background-image: url("img/bgimage.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+
+}
+
+
+.caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    margin-top: 30%;
+    font-family: norsebold, fangsong;
+    font-size: 8rem;
+
+    background-color: rgba(12,5,5,0.18);
+}
+
+
+.caption  img {
+    display: inline-block;
+    height: 100%;
+}
+
+.caption > span {
+    margin-right: 9%;
+}
+
+.credits {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: .8rem;
+}
+
+.credits a, .credits a:visited {
+    color: white;
+}
+
+
+.content-block {
+    flex-basis: calc(100vw - 100vh * 2 / 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    gap: 2%;
+}
+
+
+.content-block > div {
+    flex: 1 1 33%;
+    padding: 0 5%;
+    display: flex;
+}
+
+
+div.text-block {
+    background-color: #f9fafb;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+div.text-block > p {
+    width: 70%;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+
+}
+
+div.input-block {
+    padding: 2% 20% 3% 5%;
+    background-color: #ffffff;
+    box-shadow: rgba(12, 5, 5, 0.3) 0 2px 10px;
+
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+
+div.input-block > div.bigger-text {
+    font-size: 1.4rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+form div.row {
+    display: flex;
+    gap: 4rem;
+}
+
+div.input-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 40%;
+}
+
+div.input-item > label {
+    color: darkslategrey;
+    letter-spacing: .08rem;
+    font-size: .8rem;
+}
+
+div.input-item > input {
+    width: 100%;
+    appearance: none;
+    box-shadow: none;
+    border: solid .1rem #E5E7EB;
+    color: #404040;
+    border-radius: .2rem;
+
+    font-weight: normal;
+}
+
+
+div.input-item > input:focus {
+    appearance: none;
+    outline: 1px solid dodgerblue;
+    box-shadow: .1rem .1rem 3px rgba(0, 0, 0, 0.37);
+}
+
+
+div.input-item > input::placeholder {
+    text-align: start;
+    color: rgba(105, 105, 105, 0.7);
+}
+
+
+div.input-item > input:invalid:not(:focus) {
+    outline: 1px solid crimson;
+}
+
+
+div.input-item:has(input.pass:invalid:not(:focus))::after,
+div.input-item:has(input#mail:invalid:not(:focus))::after,
+div.input-item:has(input#phone:invalid:not(:focus))::after{
+    font-size: var(--error-font-size, .7rem);
+    color: red;
+}
+
+
+div.input-item:has(input.pass:invalid:not(:focus))::after
+ {
+    content: "password must be between 8-16 characters";
+}
+
+div.input-item:has(input#mail:invalid:not(:focus))::after
+{
+    content: "enter a valid email";
+}
+
+div.input-item:has(input#phone:invalid:not(:focus))::after
+{
+    content: "enter a valid phone number";
+}
+
+div.button-block {
+    padding: 3% 5%;
+    background-color: #f9fafb;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.submit {
+    font-size: 1rem;
+    padding: calc(var(--button-font-size) * .7) calc(var(--button-font-size ) * 3);
+    border-radius: calc(var(--button-font-size) * .3);
+    color: #ffffff;
+    background-color: #ddab4b;
+    appearance: none;
+    outline: none;
+    border: none;
+    box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, 0.2);
+    font-weight: bolder;
+    word-spacing: .06rem;
+}
+
+.submit:hover {
+    background-color: #cfa147;
+    box-shadow: .2rem .2rem .7rem rgba(0, 0, 0, 0.35);
+}
+
+div.button-block a {
+    color: #ddab4b;
+    text-decoration: none;
+    z-index: 2;
+
+}
+
+.login {
+    font-weight: normal;
+}
+
+div.button-block div.login a:hover {
+    color: #cfa147;
+    text-shadow: 0 0 2rem rgb(0, 0, 0);
+}

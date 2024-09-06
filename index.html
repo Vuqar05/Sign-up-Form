@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up Form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="image-block">
+        <div class="caption"><img src="img/odin-lined.png" alt="Logo"><span>ODIN</span></div>
+        <div class="credits">Photo by <a href="https://unsplash.com/@ewxy">Xinyi W.</a> on
+            <a href="https://unsplash.com/photos/a-large-room-with-a-bench-in-it-aN88nLwHcu0">Unsplash</a></div>
+</div>
+<div class="content-block">
+    <div class="text-block">
+        <p>This is not a real online service! You know you need something
+            like this in your life to help you realize your deepest dreams.
+            <br> Sign up <em>now</em>  to get started.
+            <br><br>
+            You <em>know</em> you want to.</p>
+    </div>
+    <div class="input-block">
+        <div class="bigger-text">Let's do this!</div>
+        <form action="" method="post" id="registration-form">
+
+            <div class="row">
+                <div class="input-item">
+                <label for="first">FIRST NAME</label>
+                <input type="text" name="first" id="first" placeholder="John">
+            </div>
+                <div class="input-item">
+                    <label for="last">LAST NAME</label>
+                    <input type="text" name="last" id="last" placeholder="Doe">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-item">
+                <label for="mail">EMAIL</label>
+                <input type="email" name="mail" id="mail" placeholder="johndoe@example.com" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+            </div>
+                <div class="input-item">
+                    <label for="phone">PHONE NUMBER</label>
+                    <input type="tel" name="phone" id="phone" placeholder="(+)123456789" pattern="^\+?\d+$">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-item">
+                    <label for="pass">PASSWORD</label>
+                    <input type="password" name="pass" id="pass" class="pass" minlength="8" maxlength="16" placeholder="8-16 characters">
+                </div>
+                <div class="input-item">
+                    <label for="repeat-pass">CONFIRM PASSWORD</label>
+                    <input type="password" name="repeat-pass" id="repeat-pass" class="pass" minlength="8" maxlength="16">
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+    <div class="button-block">
+        <button type="submit" form="registration-form" class="submit">Create Account</button>
+        <div class="login">Already have an account? <a href="https://google.com">Log In</a></div>
+    </div>
+</div>
+</body>
+</html>
